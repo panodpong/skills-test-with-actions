@@ -1,0 +1,10 @@
+name: Example workflow
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npx remark . --use remark-preset-lint-consistent
+      - run: npx remark . --use remark-preset-lint-consistent --frail
